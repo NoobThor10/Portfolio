@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yashvardhan Samsukha | Software Engineer & Mobile Developer Portfolio</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Yashvardhan Samsukha — Software Engineer, MCA Scholar at MIT-WPU, specializing in Flutter, Android, Python, Generative AI, and Full-Stack Engineering.">
+  <meta name="keywords" content="Yashvardhan Samsukha, Software Engineer, Flutter Developer, Android Developer, Python, Pune, MCA, MIT-WPU, Portfolio">
+  <meta name="author" content="Yashvardhan Samsukha">
+  <meta property="og:title" content="Yashvardhan Samsukha | Software Engineer Portfolio">
+  <meta property="og:description" content="Explore projects, skills, certifications, and experience in mobile app development and AI engineering.">
+  <meta property="og:image" content="assets/images/avatar.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background Canvas & Aurora Blobs -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="aurora-container" aria-hidden="true">
+    <div class="aurora-blob aurora-1"></div>
+    <div class="aurora-blob aurora-2"></div>
+    <div class="aurora-blob aurora-3"></div>
+  </div>
+
+  <!-- Custom Glow Cursor -->
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-bracket">&lt;</span>
+        <span class="text-gradient">YS</span>
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#terminal-section" class="nav-link">CLI</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Sound Toggle -->
+        <button class="icon-btn" id="sound-toggle-btn" title="Toggle Sound FX" aria-label="Toggle Sound FX">
+          <i class="fas fa-volume-mute" id="sound-icon"></i>
+        </button>
+
+        <!-- Theme Picker Dropdown Trigger -->
+        <div class="theme-picker-wrapper">
+          <button class="icon-btn" id="theme-toggle-btn" title="Choose Theme Palette" aria-label="Choose Theme Palette">
+            <i class="fas fa-palette"></i>
+          </button>
+          <div class="theme-dropdown" id="theme-dropdown">
+            <button class="theme-opt-btn" data-theme-val="cyberpunk">
+              <span class="theme-dot cyberpunk"></span> Cyberpunk Neon
+            </button>
+            <button class="theme-opt-btn" data-theme-val="cosmic">
+              <span class="theme-dot cosmic"></span> Cosmic Aurora
+            </button>
+            <button class="theme-opt-btn" data-theme-val="matrix">
+              <span class="theme-dot matrix"></span> Hyper Matrix
+            </button>
+            <button class="theme-opt-btn" data-theme-val="sunset">
+              <span class="theme-dot sunset"></span> Sunset Lava
+            </button>
+          </div>
+        </div>
+
+        <!-- Terminal Launcher Quick Button -->
+        <button class="icon-btn" id="terminal-launcher-btn" title="Launch Interactive Terminal" aria-label="Launch Terminal">
+          <i class="fas fa-terminal"></i>
+        </button>
+
+        <!-- Hire Me CTA -->
+        <a href="#contact" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.88rem;">
+          <i class="fas fa-paper-plane"></i> Hire Me
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-status">
+              <span class="status-dot"></span>
+              <span>Available for Software Engineering Roles</span>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <br>
+              <span class="text-gradient">Yashvardhan Samsukha</span>
+            </h1>
+
+            <div class="hero-roles">
+              <span id="typewriter-text">Full-Stack & Mobile Developer</span>
+              <span class="typewriter-cursor"></span>
+            </div>
+
+            <p class="hero-desc">
+              MCA Scholar at <strong>MIT World Peace University</strong> (GPA 7.70) and SPPU Graduate (CGPA 9.05). Specialized in crafting high-impact mobile apps with <strong>Flutter & Android</strong>, backend architectures in <strong>Python & C#</strong>, and intelligent <strong>Generative AI</strong> integrations.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fas fa-rocket"></i> Explore Projects
+              </a>
+              <button class="btn btn-secondary" id="view-resume-btn">
+                <i class="fas fa-file-invoice"></i> View / Print Resume
+              </button>
+              <a href="#terminal-section" class="btn btn-terminal">
+                <i class="fas fa-terminal"></i> Launch CLI
+              </a>
+            </div>
+
+            <div class="hero-socials">
+              <span class="social-label">CONNECT:</span>
+              <a href="https://github.com/NoobThor10" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub: NoobThor10">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/yashvardhan-samsukha" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="mailto:yashsamsukha10@gmail.com" class="social-icon copy-email-btn" title="Email Yashvardhan">
+                <i class="fas fa-envelope"></i>
+              </a>
+              <a href="tel:+917020961022" class="social-icon copy-phone-btn" title="Call Yashvardhan (+91 7020961022)">
+                <i class="fas fa-phone-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero 3D Avatar Showcase -->
+          <div class="hero-visual">
+            <div class="avatar-wrapper">
+              <div class="avatar-halo"></div>
+              <div class="avatar-card tilt-card">
+                <img src="assets/images/avatar.jpg" alt="Yashvardhan Samsukha Avatar" loading="eager">
+              </div>
+
+              <!-- Floating Tech Badges -->
+              <div class="avatar-badge-float badge-1">
+                <i class="fab fa-flutter"></i> Flutter & Dart
+              </div>
+              <div class="avatar-badge-float badge-2">
+                <i class="fab fa-python"></i> Python & GenAI
+              </div>
+              <div class="avatar-badge-float badge-3">
+                <i class="fas fa-star" style="color: #ffd000;"></i> 9.05 CGPA (SPPU)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Stats Banner -->
+        <div class="glass-card stats-bar">
+          <div class="stat-item">
+            <div class="stat-num">9.05</div>
+            <div class="stat-label">SPPU Grad CGPA (Distinction)</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">300+</div>
+            <div class="stat-label">Daily Cinema Bookings Handled</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100+</div>
+            <div class="stat-label">Weekly Voice AI Queries Processed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">6+</div>
+            <div class="stat-label">Production Apps & Certifications</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span></span> About Yashvardhan
+          </div>
+          <h2 class="section-title">
+            Engineering Systems with <span class="text-gradient">Precision & Passion</span>
+          </h2>
+          <p class="section-subtitle">
+            Based in Pune, Maharashtra, I bridge deep computer science foundations with agile software engineering to create robust, user-centric digital products.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="about-text">
+              <p>
+                Hello! I'm <strong>Yashvardhan Samsukha</strong>, a software engineer currently pursuing my <strong>Master of Computer Applications (MCA)</strong> at <strong>MIT World Peace University, Pune</strong> (GPA: 7.70). Previously, I completed my <strong>BBA in Computer Applications</strong> from Savitribai Phule Pune University (SPPU) with an outstanding <strong>9.05 / 10 CGPA</strong>.
+              </p>
+              <p>
+                My professional experience includes working as a <strong>Junior Software Engineer at Meticulous Invention</strong>, where I developed mobile features and spearheaded comprehensive <strong>User Acceptance Testing (UAT)</strong> suites, improving release stability and zero-defect production rollouts.
+              </p>
+              <p>
+                I am deeply passionate about <strong>Flutter mobile engineering</strong>, <strong>Generative AI applications</strong>, and full-stack software development. Whether building scalable e-commerce systems, multithreaded AI voice assistants, or emotion-driven music applications, I thrive on solving complex technical challenges.
+              </p>
+            </div>
+
+            <div class="facts-row">
+              <div class="fact-pill"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</div>
+              <div class="fact-pill"><i class="fas fa-graduation-cap"></i> MCA @ MIT-WPU</div>
+              <div class="fact-pill"><i class="fas fa-award"></i> Oracle GenAI Certified</div>
+              <div class="fact-pill"><i class="fas fa-code"></i> Java, Python, Dart, C++</div>
+            </div>
+          </div>
+
+          <!-- 4 Pillars Grid -->
+          <div class="about-highlights">
+            <div class="glass-card highlight-card">
+              <div class="highlight-icon">
+                <i class="fab fa-android"></i>
+              </div>
+              <h3 class="highlight-title">Mobile Engineering</h3>
+              <p class="highlight-desc">
+                Architecting reactive cross-platform Android and Flutter applications with Firebase, state management, and real-time offline caching.
+              </p>
+            </div>
+
+            <div class="glass-card highlight-card">
+              <div class="highlight-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3 class="highlight-title">AI & Emerging Tech</h3>
+              <p class="highlight-desc">
+                Certified in Oracle Generative AI, prompt engineering, speech recognition processing, and sentiment-based machine intelligence.
+              </p>
+            </div>
+
+            <div class="glass-card highlight-card">
+              <div class="highlight-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <h3 class="highlight-title">Full-Stack & Systems</h3>
+              <p class="highlight-desc">
+                Building backend APIs with Python Flask, C#, and relational databases (MySQL, SQLite) with strict ACID transaction safety.
+              </p>
+            </div>
+
+            <div class="glass-card highlight-card">
+              <div class="highlight-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="highlight-title">Quality & Security</h3>
+              <p class="highlight-desc">
+                Experienced in UAT regression cycles, bug lifecycle management, and certified in CISEH Ethical Hacking and Penetration Testing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE SECTION -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span></span> Career Trajectory
+          </div>
+          <h2 class="section-title">
+            Professional <span class="text-gradient">Experience</span>
+          </h2>
+          <p class="section-subtitle">
+            Delivering production software, validating quality through rigorous testing cycles, and partnering across engineering teams.
+          </p>
+        </div>
+
+        <div class="exp-timeline">
+          <div class="glass-card exp-card">
+            <div class="exp-header">
+              <div class="exp-role-box">
+                <h3 class="exp-role">Junior Software Engineer</h3>
+                <div class="exp-company">
+                  <i class="fas fa-building"></i> Meticulous Invention
+                  <span style="color: var(--text-dim);">&bull;</span>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;"><i class="fas fa-map-marker-alt"></i> Pune, MH</span>
+                </div>
+              </div>
+              <div class="exp-badge-duration">
+                <i class="fas fa-calendar-alt"></i> Jan 2026 – Aug 2026
+              </div>
+            </div>
+
+            <div class="exp-bullets">
+              <div class="exp-bullet">
+                <i class="fas fa-check-circle"></i>
+                <span>Contributed actively to mobile application feature development and led comprehensive User Acceptance Testing (UAT) cycles to validate software quality and functionality prior to major client releases.</span>
+              </div>
+              <div class="exp-bullet">
+                <i class="fas fa-check-circle"></i>
+                <span>Partnered closely with the cross-functional engineering team to identify, report, track, and resolve edge-case bugs across multiple sprint phases, directly elevating release stability and app responsiveness.</span>
+              </div>
+              <div class="exp-bullet">
+                <i class="fas fa-check-circle"></i>
+                <span>Authored, executed, and validated thorough test suites mapped to functional requirements, ensuring strictly accurate application behavior and zero regression defects before deployment.</span>
+              </div>
+            </div>
+
+            <div class="exp-tech-tags">
+              <span class="badge"><i class="fas fa-mobile-alt"></i> Mobile App Development</span>
+              <span class="badge"><i class="fas fa-vial"></i> User Acceptance Testing (UAT)</span>
+              <span class="badge"><i class="fas fa-bug"></i> Defect Lifecycle & Debugging</span>
+              <span class="badge"><i class="fas fa-tasks"></i> QA Test Matrices</span>
+              <span class="badge"><i class="fas fa-sync-alt"></i> Agile & Sprint Collaboration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <div class="section-tag" style="margin: 0 auto 1rem;">
+            <span></span> Portfolio Showcase
+          </div>
+          <h2 class="section-title">
+            Featured <span class="text-gradient">Engineering Projects</span>
+          </h2>
+          <p class="section-subtitle" style="margin: 0 auto;">
+            A curated selection of production mobile apps, intelligent AI assistants, and enterprise database systems.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects (5)</button>
+          <button class="filter-btn" data-filter="mobile">Mobile Apps (2)</button>
+          <button class="filter-btn" data-filter="ai">AI & Web (2)</button>
+          <button class="filter-btn" data-filter="system">Systems & DB (1)</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          
+          <!-- PROJECT 1: NOVA FASHION -->
+          <div class="glass-card project-card tilt-card" data-category="mobile">
+            <div class="project-media">
+              <img src="assets/images/nova.jpg" alt="NOVA Fashion E-Commerce App Preview" loading="lazy">
+              <div class="project-overlay">
+                <span class="project-category-badge">Flutter & Firebase</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">NOVA — Fashion E-Commerce App</h3>
+              <p class="project-desc">
+                Full-featured Android e-commerce mobile app with Firebase Auth, dynamic catalog, interactive wishlist, cart, and checkout flow. Includes real-time coupon validation on scalable feature-based architecture.
+              </p>
+              <div class="project-tags">
+                <span class="badge">Flutter</span>
+                <span class="badge">Firebase</span>
+                <span class="badge">Dart</span>
+                <span class="badge">REST APIs</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn project-deepdive-btn" data-project="nova">
+                  Deep Dive & Architecture <i class="fas fa-arrow-right"></i>
+                </button>
+                <a href="https://github.com/NoobThor10" target="_blank" rel="noopener noreferrer" class="social-icon" style="width: 36px; height: 36px; font-size: 1rem;" title="View Source">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: TUNEMAP -->
+          <div class="glass-card project-card tilt-card" data-category="ai">
+            <div class="project-media">
+              <img src="assets/images/tunemap.jpg" alt="TuneMap Music Discovery Preview" loading="lazy">
+              <div class="project-overlay">
+                <span class="project-category-badge">Python & Spotify API</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">TuneMap — Mood Music Discovery</h3>
+              <p class="project-desc">
+                Emotion-driven music discovery web app transforming sentiments into curated playlists via Spotify and Apple Music APIs. Features live lyrics fetching, audio previews, and one-click playlist synchronization.
+              </p>
+              <div class="project-tags">
+                <span class="badge">Python</span>
+                <span class="badge">Flask</span>
+                <span class="badge">Spotify API</span>
+                <span class="badge">SQLite</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn project-deepdive-btn" data-project="tunemap">
+                  Deep Dive & Architecture <i class="fas fa-arrow-right"></i>
+                </button>
+                <a href="https://github.com/NoobThor10" target="_blank" rel="noopener noreferrer" class="social-icon" style="width: 36px; height: 36px; font-size: 1rem;" title="View Source">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3: AI VOICE ASSISTANT -->
+          <div class="glass-card project-card tilt-card" data-category="ai">
+            <div class="project-media">
+              <img src="assets/images/voice_assistant.jpg" alt="AI Voice Assistant Preview" loading="lazy">
+              <div class="project-overlay">
+                <span class="project-category-badge">AI & Multithreading</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">AI Voice Assistant</h3>
+              <p class="project-desc">
+                Engineered an intelligent voice assistant with stopwatch, countdown timers, and external API queries, processing 100+ weekly speech interactions with Python multithreading and acoustic noise resilience.
+              </p>
+              <div class="project-tags">
+                <span class="badge">Python</span>
+                <span class="badge">SpeechRecognition</span>
+                <span class="badge">Threading</span>
+                <span class="badge">APIs</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn project-deepdive-btn" data-project="voice_assistant">
+                  Deep Dive & Architecture <i class="fas fa-arrow-right"></i>
+                </button>
+                <a href="https://github.com/NoobThor10" target="_blank" rel="noopener noreferrer" class="social-icon" style="width: 36px; height: 36px; font-size: 1rem;" title="View Source">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 4: CINEMA MANAGEMENT -->
+          <div class="glass-card project-card tilt-card" data-category="system">
+            <div class="project-media">
+              <img src="assets/images/cinema.jpg" alt="Cinema Management System Preview" loading="lazy">
+              <div class="project-overlay">
+                <span class="project-category-badge">C# & MySQL Database</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Cinema Management System</h3>
+              <p class="project-desc">
+                High-throughput cinema booking system handling 300+ daily reservations. Features real-time interactive theater seat grid selection, automated ticketing with barcode validation, and transaction auditing.
+              </p>
+              <div class="project-tags">
+                <span class="badge">C#</span>
+                <span class="badge">.NET</span>
+                <span class="badge">MySQL</span>
+                <span class="badge">ACID Transactions</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn project-deepdive-btn" data-project="cinema">
+                  Deep Dive & Architecture <i class="fas fa-arrow-right"></i>
+                </button>
+                <a href="https://github.com/NoobThor10" target="_blank" rel="noopener noreferrer" class="social-icon" style="width: 36px; height: 36px; font-size: 1rem;" title="View Source">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 5: CARETAIL -->
+          <div class="glass-card project-card tilt-card" data-category="mobile">
+            <div class="project-media">
+              <img src="assets/images/caretail.jpg" alt="CareTail Pet Care Mobile App Preview" loading="lazy">
+              <div class="project-overlay">
+                <span class="project-category-badge">Android & SQLite</span>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">CareTail — Pet Care Mobile App</h3>
+              <p class="project-desc">
+                Smart veterinary and pet wellness Android app featuring personalized feeding routines, dietary recommendations tailored by breed, age, and health condition, with local SQLite tracking and reminders.
+              </p>
+              <div class="project-tags">
+                <span class="badge">Java</span>
+                <span class="badge">Android SDK</span>
+                <span class="badge">SQLite</span>
+                <span class="badge">Material Design</span>
+              </div>
+              <div class="project-footer">
+                <button class="project-link-btn project-deepdive-btn" data-project="caretail">
+                  Deep Dive & Architecture <i class="fas fa-arrow-right"></i>
+                </button>
+                <a href="https://github.com/NoobThor10" target="_blank" rel="noopener noreferrer" class="social-icon" style="width: 36px; height: 36px; font-size: 1rem;" title="View Source">
+                  <i class="fab fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE TERMINAL SECTION -->
+    <section class="section" id="terminal-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span></span> Recruiter Interactive Console
+          </div>
+          <h2 class="section-title">
+            Explore via <span class="text-gradient">Interactive CLI Terminal</span>
+          </h2>
+          <p class="section-subtitle">
+            Prefer a developer console? Run commands like <code>about</code>, <code>skills</code>, <code>projects</code>, <code>certs</code>, <code>theme matrix</code>, or <code>matrix</code>.
+          </p>
+        </div>
+
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+            </div>
+            <div class="terminal-title">yashvardhan@developer-box: ~ (zsh)</div>
+            <div style="font-size: 0.75rem; color: var(--text-dim);">UTF-8</div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <div class="term-output">
+<span class="cyan">===============================================================</span>
+<span class="cyan">  YASHVARDHAN SAMSUKHA — INTERACTIVE DEVELOPER TERMINAL v2.5  </span>
+<span class="cyan">===============================================================</span>
+Type <span class="green">'help'</span> to view all commands, or try:
+&bull; <span class="yellow">skills</span>       - Inspect technical capabilities
+&bull; <span class="yellow">projects</span>     - Browse project architecture
+&bull; <span class="yellow">experience</span>   - View professional track record
+&bull; <span class="yellow">matrix</span>       - Trigger the Matrix rain effect
+&bull; <span class="yellow">theme cosmic</span> - Dynamically change portfolio color theme
+            </div>
+          </div>
+          <div style="padding: 0.75rem 1.5rem; background: #070d14; border-top: 1px solid rgba(255,255,255,0.06);">
+            <div class="term-input-line">
+              <span class="term-prompt">yash@terminal:~$</span>
+              <input type="text" class="term-input" id="terminal-input" placeholder="Type a command (e.g. help, skills, matrix)..." autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX SECTION -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span></span> Technical Stack
+          </div>
+          <h2 class="section-title">
+            Skills & <span class="text-gradient">Core Competencies</span>
+          </h2>
+          <p class="section-subtitle">
+            A comprehensive overview of programming languages, frameworks, developer tools, and computer science foundations.
+          </p>
+        </div>
+
+        <div class="skills-categories">
+          
+          <!-- Category 1: Languages -->
+          <div class="glass-card skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+              <h3 class="skill-cat-title">Programming Languages</h3>
+            </div>
+            <div class="skill-items-grid">
+              <span class="skill-pill"><i class="fab fa-java"></i> Java</span>
+              <span class="skill-pill"><i class="fab fa-python"></i> Python</span>
+              <span class="skill-pill"><i class="fas fa-terminal"></i> C++</span>
+              <span class="skill-pill"><i class="fas fa-database"></i> SQL</span>
+              <span class="skill-pill"><i class="fas fa-feather-alt"></i> Dart</span>
+              <span class="skill-pill"><i class="fab fa-js-square"></i> JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Mobile & Cloud -->
+          <div class="glass-card skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-mobile-screen"></i></div>
+              <h3 class="skill-cat-title">Mobile & App Development</h3>
+            </div>
+            <div class="skill-items-grid">
+              <span class="skill-pill"><i class="fab fa-flutter"></i> Flutter</span>
+              <span class="skill-pill"><i class="fab fa-android"></i> Android Native</span>
+              <span class="skill-pill"><i class="fas fa-fire"></i> Firebase Auth</span>
+              <span class="skill-pill"><i class="fas fa-server"></i> Cloud Firestore</span>
+              <span class="skill-pill"><i class="fas fa-network-wired"></i> RESTful APIs</span>
+              <span class="skill-pill"><i class="fas fa-layer-group"></i> State Management</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Data & Analytics -->
+          <div class="glass-card skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-chart-line"></i></div>
+              <h3 class="skill-cat-title">Data & Analytics</h3>
+            </div>
+            <div class="skill-items-grid">
+              <span class="skill-pill"><i class="fas fa-chart-pie"></i> Data Analysis</span>
+              <span class="skill-pill"><i class="fas fa-table"></i> SQL Queries & Joins</span>
+              <span class="skill-pill"><i class="fas fa-filter"></i> Aggregations</span>
+              <span class="skill-pill"><i class="fas fa-file-excel"></i> Microsoft Excel</span>
+              <span class="skill-pill"><i class="fas fa-chart-bar"></i> Data Visualization</span>
+              <span class="skill-pill"><i class="fas fa-database"></i> SQLite / MySQL</span>
+            </div>
+          </div>
+
+          <!-- Category 4: CS Fundamentals -->
+          <div class="glass-card skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-cubes"></i></div>
+              <h3 class="skill-cat-title">CS Fundamentals</h3>
+            </div>
+            <div class="skill-items-grid">
+              <span class="skill-pill"><i class="fas fa-project-diagram"></i> Data Structures & Algorithms</span>
+              <span class="skill-pill"><i class="fas fa-sitemap"></i> Object-Oriented Programming (OOP)</span>
+              <span class="skill-pill"><i class="fas fa-database"></i> Database Management (DBMS)</span>
+              <span class="skill-pill"><i class="fas fa-drafting-compass"></i> Software Design Principles</span>
+              <span class="skill-pill"><i class="fas fa-network-wired"></i> Computer Networks</span>
+            </div>
+          </div>
+
+          <!-- Category 5: Tools & Platforms -->
+          <div class="glass-card skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-toolbox"></i></div>
+              <h3 class="skill-cat-title">Tools & Platforms</h3>
+            </div>
+            <div class="skill-items-grid">
+              <span class="skill-pill"><i class="fab fa-git-alt"></i> Git</span>
+              <span class="skill-pill"><i class="fab fa-github"></i> GitHub</span>
+              <span class="skill-pill"><i class="fas fa-laptop-code"></i> Android Studio</span>
+              <span class="skill-pill"><i class="fas fa-file-code"></i> VS Code</span>
+              <span class="skill-pill"><i class="fas fa-paper-plane"></i> Postman</span>
+              <span class="skill-pill"><i class="fab fa-linux"></i> Linux CLI</span>
+            </div>
+          </div>
+
+          <!-- Category 6: AI & Emerging Tech -->
+          <div class="glass-card skill-category-card">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon"><i class="fas fa-robot"></i></div>
+              <h3 class="skill-cat-title">AI & Emerging Tech</h3>
+            </div>
+            <div class="skill-items-grid">
+              <span class="skill-pill"><i class="fas fa-brain"></i> Generative AI</span>
+              <span class="skill-pill"><i class="fas fa-magic"></i> Prompt Engineering</span>
+              <span class="skill-pill"><i class="fas fa-cloud"></i> Oracle Cloud GenAI</span>
+              <span class="skill-pill"><i class="fas fa-microphone"></i> Speech Recognition</span>
+              <span class="skill-pill"><i class="fas fa-shield-virus"></i> Information Security (CISEH)</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span></span> Academic Credentials
+          </div>
+          <h2 class="section-title">
+            Education & <span class="text-gradient">Scholastic Background</span>
+          </h2>
+          <p class="section-subtitle">
+            Consistent top-tier academic performance spanning postgraduate computer applications, bachelor degrees, and foundational boards.
+          </p>
+        </div>
+
+        <div class="edu-timeline">
+          
+          <!-- Master of Computer Applications -->
+          <div class="glass-card edu-card">
+            <div class="edu-header">
+              <div>
+                <h3 class="edu-degree">Master of Computer Applications (MCA)</h3>
+                <div class="edu-school">
+                  <i class="fas fa-university"></i> MIT World Peace University, Pune
+                  <span style="color: var(--text-dim); margin: 0 0.4rem;">&bull;</span>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">Aug 2024 – Jun 2026</span>
+                </div>
+              </div>
+              <div class="edu-gpa-badge">
+                <i class="fas fa-star"></i> GPA: 7.70 / 10
+              </div>
+            </div>
+            <div class="edu-coursework">
+              <strong>Relevant Coursework:</strong> Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Software Engineering, Mobile Application Development, Artificial Intelligence & Machine Learning, Cloud Computing, Computer Networks.
+            </div>
+          </div>
+
+          <!-- BBA Computer Applications -->
+          <div class="glass-card edu-card">
+            <div class="edu-header">
+              <div>
+                <h3 class="edu-degree">BBA (Computer Applications)</h3>
+                <div class="edu-school">
+                  <i class="fas fa-university"></i> Savitribai Phule Pune University (SPPU), Pune
+                  <span style="color: var(--text-dim); margin: 0 0.4rem;">&bull;</span>
+                  <span style="color: var(--text-muted); font-size: 0.9rem;">Jul 2021 – Mar 2024</span>
+                </div>
+              </div>
+              <div class="edu-gpa-badge">
+                <i class="fas fa-medal"></i> CGPA: 9.05 / 10 (Distinction)
+              </div>
+            </div>
+            <div class="edu-coursework">
+              <strong>Relevant Coursework:</strong> Programming Fundamentals, Data Structures, Database Management Systems, Web Technologies, Statistics, Financial Accounting, Business Communication, Principles of Management.
+            </div>
+          </div>
+
+          <!-- Secondary & Higher Secondary Board Results -->
+          <div class="edu-grid-secondary">
+            <div class="glass-card edu-subcard">
+              <h4 class="edu-subcard-title">HSC 12th Grade Board Examination</h4>
+              <p style="color: var(--primary); font-weight: 700; font-size: 1.25rem;">80.16%</p>
+              <div class="edu-subcard-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</span>
+                <span>Year: 2021</span>
+              </div>
+            </div>
+
+            <div class="glass-card edu-subcard">
+              <h4 class="edu-subcard-title">ICSE 10th Grade Board Examination</h4>
+              <p style="color: var(--secondary); font-weight: 700; font-size: 1.25rem;">81.40%</p>
+              <div class="edu-subcard-meta">
+                <span><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</span>
+                <span>Year: 2019</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section class="section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span></span> Verified Accreditations
+          </div>
+          <h2 class="section-title">
+            Industry <span class="text-gradient">Certifications</span>
+          </h2>
+          <p class="section-subtitle">
+            Professional credentials validating expertise across cloud AI, full-stack web engineering, data science, and ethical hacking.
+          </p>
+        </div>
+
+        <div class="cert-grid">
+          
+          <!-- Cert 1: Oracle OCI GenAI -->
+          <div class="glass-card cert-card">
+            <div class="cert-header">
+              <div class="cert-icon-box" style="background: rgba(239, 68, 68, 0.15); color: #ef4444; border-color: rgba(239, 68, 68, 0.3);">
+                <i class="fas fa-cloud-bolt"></i>
+              </div>
+              <div>
+                <h3 class="cert-title">Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</h3>
+                <div class="cert-issuer">Oracle Corporation</div>
+              </div>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-year"><i class="fas fa-calendar-check"></i> Nov 2025</span>
+              <span class="cert-verified"><i class="fas fa-check-circle"></i> Certified Professional</span>
+            </div>
+          </div>
+
+          <!-- Cert 2: Udemy Full Stack -->
+          <div class="glass-card cert-card">
+            <div class="cert-header">
+              <div class="cert-icon-box" style="background: rgba(168, 85, 247, 0.15); color: #a855f7; border-color: rgba(168, 85, 247, 0.3);">
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <div>
+                <h3 class="cert-title">Complete Full Stack Web Development Bootcamp</h3>
+                <div class="cert-issuer">Udemy Academy</div>
+              </div>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-year"><i class="fas fa-calendar-check"></i> Mar 2026</span>
+              <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+            </div>
+          </div>
+
+          <!-- Cert 3: Infosys JS Essentials -->
+          <div class="glass-card cert-card">
+            <div class="cert-header">
+              <div class="cert-icon-box" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);">
+                <i class="fab fa-js"></i>
+              </div>
+              <div>
+                <h3 class="cert-title">JavaScript Essentials Certification</h3>
+                <div class="cert-issuer">Infosys Springboard</div>
+              </div>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-year"><i class="fas fa-calendar-check"></i> 2025</span>
+              <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+            </div>
+          </div>
+
+          <!-- Cert 4: Cognitive Class Python -->
+          <div class="glass-card cert-card">
+            <div class="cert-header">
+              <div class="cert-icon-box" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
+                <i class="fab fa-python"></i>
+              </div>
+              <div>
+                <h3 class="cert-title">Python and Data Science Certification</h3>
+                <div class="cert-issuer">Cognitive Class (IBM)</div>
+              </div>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-year"><i class="fas fa-calendar-check"></i> 2025</span>
+              <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+            </div>
+          </div>
+
+          <!-- Cert 5: Infosys C++ -->
+          <div class="glass-card cert-card">
+            <div class="cert-header">
+              <div class="cert-icon-box" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6; border-color: rgba(59, 130, 246, 0.3);">
+                <i class="fas fa-file-code"></i>
+              </div>
+              <div>
+                <h3 class="cert-title">C++ Programming Certification</h3>
+                <div class="cert-issuer">Infosys Springboard</div>
+              </div>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-year"><i class="fas fa-calendar-check"></i> 2024</span>
+              <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+            </div>
+          </div>
+
+          <!-- Cert 6: CISEH Ethical Hacking -->
+          <div class="glass-card cert-card">
+            <div class="cert-header">
+              <div class="cert-icon-box" style="background: rgba(236, 72, 153, 0.15); color: #ec4899; border-color: rgba(236, 72, 153, 0.3);">
+                <i class="fas fa-user-secret"></i>
+              </div>
+              <div>
+                <h3 class="cert-title">CISEH & Certified Penetration Tester</h3>
+                <div class="cert-issuer">Information Security & Ethical Hacking</div>
+              </div>
+            </div>
+            <div class="cert-footer">
+              <span class="cert-year"><i class="fas fa-calendar-check"></i> 2021</span>
+              <span class="cert-verified"><i class="fas fa-check-circle"></i> Security Certified</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <span></span> Let's Connect
+          </div>
+          <h2 class="section-title">
+            Get In <span class="text-gradient">Touch</span>
+          </h2>
+          <p class="section-subtitle">
+            I'm actively open to full-time Software Engineer, Mobile Developer, and Graduate Engineering roles. Let's discuss how I can contribute to your team.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Info Cards -->
+          <div class="contact-info-col">
+            <!-- Email -->
+            <a href="mailto:yashsamsukha10@gmail.com" class="glass-card contact-card copy-email-btn">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-details">
+                <span class="contact-label">Email Address (Click to Copy)</span>
+                <span class="contact-value">yashsamsukha10@gmail.com</span>
+              </div>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+917020961022" class="glass-card contact-card copy-phone-btn">
+              <div class="contact-icon" style="background: rgba(16, 185, 129, 0.12); color: #10b981; border-color: rgba(16, 185, 129, 0.3);"><i class="fas fa-phone-alt"></i></div>
+              <div class="contact-details">
+                <span class="contact-label">Phone / WhatsApp</span>
+                <span class="contact-value">+91 7020961022</span>
+              </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/NoobThor10" target="_blank" rel="noopener noreferrer" class="glass-card contact-card">
+              <div class="contact-icon" style="background: rgba(168, 85, 247, 0.12); color: #a855f7; border-color: rgba(168, 85, 247, 0.3);"><i class="fab fa-github"></i></div>
+              <div class="contact-details">
+                <span class="contact-label">GitHub Repository</span>
+                <span class="contact-value">github.com/NoobThor10</span>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="glass-card contact-card">
+              <div class="contact-icon" style="background: rgba(245, 158, 11, 0.12); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3);"><i class="fas fa-location-dot"></i></div>
+              <div class="contact-details">
+                <span class="contact-label">Location</span>
+                <span class="contact-value">Pune, Maharashtra, India</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="glass-card contact-form-card">
+            <form class="contact-form" id="contact-form">
+              <div class="form-group">
+                <label class="form-label" for="user-name">Your Full Name</label>
+                <input type="text" id="user-name" class="form-input" placeholder="e.g. John Doe" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="user-email">Your Work Email</label>
+                <input type="email" id="user-email" class="form-input" placeholder="e.g. recruiter@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="user-subject">Subject</label>
+                <input type="text" id="user-subject" class="form-input" placeholder="e.g. Mobile Developer Opportunity / Project Inquiry" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="user-message">Your Message</label>
+                <textarea id="user-message" class="form-textarea" placeholder="Hello Yashvardhan, we reviewed your projects and would love to connect..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">
+                <i class="fas fa-paper-plane"></i> Send Message Directly
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="brand-bracket" style="color: var(--primary); font-family: var(--font-code); font-weight: 700;">&lt;</span>
+          <span class="text-gradient">Yashvardhan Samsukha</span>
+          <span class="brand-bracket" style="color: var(--primary); font-family: var(--font-code); font-weight: 700;">/&gt;</span>
+        </div>
+
+        <div class="footer-clock" id="footer-clock">
+          <i class="fas fa-clock"></i> Pune, India: <span>Loading...</span>
+        </div>
+
+        <div class="hero-socials">
+          <a href="https://github.com/NoobThor10" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/yashvardhan-samsukha" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:yashsamsukha10@gmail.com" class="social-icon copy-email-btn" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:+917020961022" class="social-icon copy-phone-btn" title="Phone">
+            <i class="fas fa-phone-alt"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Yashvardhan Samsukha. Engineered with modern HTML5, CSS3, & Vanilla JavaScript. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Floating Button -->
+  <button class="back-to-top" id="back-to-top" title="Back to top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Reusable Modal Overlay -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-body" id="modal-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
